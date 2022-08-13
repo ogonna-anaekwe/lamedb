@@ -1,11 +1,8 @@
-#include "../headers/get_record.h"
 #include "../headers/put_record.h"
-#include "../headers/insert_node.h"
-#include "../headers/show_records.h"
 
 void put_record(struct record *db_records, char *record_key, char *record_value, char *cmd)
 {
-    bool create_new_record = get_record(db_records, record_key, record_value, cmd) == 0,
+    bool create_new_record = get_record(db_records, record_key, cmd) == 0,
          keys_match = 0;
 
     FILE *db = fopen(DB_NAME, "w");

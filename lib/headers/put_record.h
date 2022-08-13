@@ -2,6 +2,9 @@
 #define __put_record__h
 
 #include "init_db.h"
+#include "get_record.h"
+#include "insert_node.h"
+#include "show_records.h"
 
 /**
  * Adds record to list. If record already exists, update.

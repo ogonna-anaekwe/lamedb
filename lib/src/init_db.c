@@ -1,5 +1,4 @@
 #include "../headers/init_db.h"
-#include "../headers/insert_node.h"
 
 struct record *initialize_db(void)
 {

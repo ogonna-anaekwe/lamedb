@@ -9,6 +9,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <inttypes.h>
+#include "insert_node.h"
 
 #define FIELDS 2
 #define BASE 10
