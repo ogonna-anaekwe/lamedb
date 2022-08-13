@@ -5,6 +5,8 @@ bool get_record(struct record *existing_record, char *record_key, char *record_v
 {
 
     long record_key_num = strtol(record_key, NULL, BASE);
+    CHECK_KEY(record_key_num); /* This check is also applied in all queries that indirectly invoke the get query e.g. put */
+
     bool record_exists = 0,
          get_cmd = strncmp(cmd, "g", strlen(cmd)) == 0;
 

@@ -50,13 +50,5 @@ int main(int argc, char *argv[])
         clear_db();
     }
 
-    /*
-    Delete record
-    1. read file into list (also have a tmp list)
-    2. iterate through list copying over members to tmp list
-    3. copy over all members (except from that which is to be deleted)
-    4. overwrite file w/  tmp list
-    */
-
     return 0;
 }

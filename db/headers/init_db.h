@@ -23,6 +23,7 @@ struct record
 
 #define CHECK_MALLOC(ptr) assert(ptr != NULL); /* Did malloc succeed? */
 #define CHECK_FILE(db) assert(db != NULL);     /* Was the file successfully opened? */
+#define CHECK_KEY(key) assert(key > 0);        /* Ensure key exceeds zero */
 
 /**
  * Initializes the db (which is really just a txt file).
