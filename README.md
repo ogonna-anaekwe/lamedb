@@ -1,5 +1,5 @@
 # lamedb
-This is a simplistic database that functions as a key-value store. It doesn't do much: it's that lame, hence the name `lamedb`. `lamedb` has only 2 fields: `key` and `value`. The db is `.txt` file named `lamedb_kv.txt`. This file holds all the records in the db. So what little does `lamedb` do?
+This is a simplistic database that functions as a key-value store. It doesn't do much: it's that lame, hence `lamedb`. `lamedb` has only 2 fields: `key` and `value`. The db is `.txt` file named `lamedb_kv.txt`. This file holds all the records in the db. So what little does `lamedb` do?
 1. Adds record or updates (existing) record.
 2. Gets a specific record.
 3. Deletes a specific record.
