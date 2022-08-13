@@ -12,10 +12,13 @@ bool get_record(struct record *db_records, char *record_key, char *record_value,
     while (db_records)
     {
         record_exists = db_records->key == record_key_num;
-        if (record_exists && get_cmd)
+        if (record_exists)
         {
-            printf("%ld,%s", db_records->key, db_records->value);
-            break;
+            if (get_cmd)
+            {
+                printf("%ld,%s", db_records->key, db_records->value);
+            }
+            break; /* w/o this, there will be duplicates. Remove this and see */
         }
 
         db_records = db_records->next_record;
@@ -23,7 +26,7 @@ bool get_record(struct record *db_records, char *record_key, char *record_value,
 
     if (!record_exists && get_cmd)
     {
-        printf("No record for key %ld in db.\nYou can add one thus: ./kv p,%ld,<value>\n", record_key_num, record_key_num);
+        printf("No record for key %ld in db.\nYou can add one thus: ./lamedb p,%ld,<value>\n", record_key_num, record_key_num);
     }
 
     return record_exists; /* Determines how to handle 'puts': update (if record exists) or create new record otherwise */

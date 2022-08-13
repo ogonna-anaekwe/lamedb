@@ -14,7 +14,6 @@ void put_record(struct record *db_records, char *record_key, char *record_value,
     if (create_new_record)
     {
         struct record *new_record = insert_node(db_records, record_key, record_value, create_new_record);
-
         show_records(new_record, db);
     }
 
@@ -27,5 +26,6 @@ void put_record(struct record *db_records, char *record_key, char *record_value,
             db_records = db_records->next_record;
         }
     }
+
     fclose(db);
 }

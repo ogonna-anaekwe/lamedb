@@ -8,7 +8,7 @@ This is a simplistic database that functions as a key-value store. It doesn't do
 
 # Why is it lame?
 1. It only does the aforementioned things.
-2. It only supports two fields: `key` and `value`. (`key`, which **MUST** be greater than `0`, is our guarantee of uniquess: no two records can have the same key. Uniqueness is currently buggy!)
+2. It only supports two fields: `key` and `value`. (`key`, which **MUST** be greater than `0`, is our guarantee of uniquess: no two records can have the same key.)
 3. It is not thread safe, hence ill-suited for concurrent queries. 
 4. It only accepts one query per time.
 5. It uses linked lists which are [terrible for search](https://en.wikipedia.org/wiki/Linked_list#Speeding_up_search). (The cpu time taken to search for records in the db grows linearly with the number of records - the [time complexity](https://en.wikipedia.org/wiki/Time_complexity) is `O(n)`, `n` being the number of records in the db.)
