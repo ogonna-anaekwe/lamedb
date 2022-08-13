@@ -1,4 +1,4 @@
-#include "../headers/get_record.h"
+#include "../headers/delete_record.h"
 
 void delete_record(struct record *db_records, char *record_key, char *cmd)
 {
