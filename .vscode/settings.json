@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "init_db.h": "c",
+        "query_router.h": "c",
+        "show_records.h": "c",
+        "insert_node.h": "c"
+    }
+}
