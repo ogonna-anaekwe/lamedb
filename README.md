@@ -52,5 +52,5 @@ Show all records:
 $ ./lamedb a
 ```
 
-**NOTE:** Ideally, `<value>` should be a string. E.g., to add a record: `./lamedb p,1,first`; to get that record: `./lamedb g,1`; to update that record: `./lamedb p,1,one`.
+**NOTE:** Ideally, `<value>` should be a string. E.g., to add a record: `./lamedb p,1,first`; to get that record: `./lamedb g,1`; to update that record: `./lamedb p,1,one`; to delete that record `./lamedb d,1`.
 
