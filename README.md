@@ -8,10 +8,10 @@ This is a simplistic database that functions as a key-value store. It doesn't do
 
 # Why is it lame?
 1. It only does the aforementioned things.
-2. It only supports two fields: `key` and `value`. (`key`, which **MUST** be greater than `0`, is our guarantee of uniquess: no two records can have the same key.)
-3. It is not thread safe. So it is not ideal for concurrent operations. 
+2. It only supports two fields: `key` and `value`. (`key`, which **MUST** be greater than `0`, is our guarantee of uniquess: no two records can have the same key. Uniqueness is currently buggy!)
+3. It is not thread safe, hence ill-suited for concurrent queries. 
 4. It only accepts one query per time.
-5. It uses linked lists which are [terrible for search](https://en.wikipedia.org/wiki/Linked_list#Speeding_up_search). (*Someone* assigned this a fancy term `O(n)`, `n` being the number of records in the db.)
+5. It uses linked lists which are [terrible for search](https://en.wikipedia.org/wiki/Linked_list#Speeding_up_search). (The cpu time taken to search for records in the db grows linearly with the number of records - the [time complexity](https://en.wikipedia.org/wiki/Time_complexity) is `O(n)`, `n` being the number of records in the db.)
 
 # Implementation
 While the db is a `.txt` file, every query (get, put, etc) works with an in-memory linked list. This list contains all the records in the db. And now the implementation:
@@ -26,7 +26,7 @@ While the db is a `.txt` file, every query (get, put, etc) works with an in-memo
 ```sh
 $ make
 ```
-# Example Usage
+# Example Queries
 Get a record:
 ```sh
 $ ./lamedb g,<key>

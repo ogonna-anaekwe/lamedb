@@ -1,15 +1,12 @@
-#include "./db/headers/init_db.h"
-#include "./db/headers/get_record.h"
-#include "./db/headers/put_record.h"
-#include "./db/headers/show_records.h"
-#include "./db/headers/clear_db.h"
-
-#define FIELDS 2
-#define BASE 10
+#include "./lib/headers/init_db.h"
+#include "./lib/headers/get_record.h"
+#include "./lib/headers/put_record.h"
+#include "./lib/headers/show_records.h"
+#include "./lib/headers/clear_db.h"
 
 int main(int argc, char *argv[])
 {
-    struct record *existing_record = initialize_db();
+    struct record *db_records = initialize_db();
     char *query = argv[1],
          *query_param,
          *query_split[3];
@@ -32,17 +29,17 @@ int main(int argc, char *argv[])
 
     if (get_cmd)
     {
-        get_record(existing_record, key, value, cmd);
+        get_record(db_records, key, value, cmd);
     }
 
     if (put_cmd)
     {
-        put_record(existing_record, key, value, cmd);
+        put_record(db_records, key, value, cmd);
     }
 
     if (show_cmd)
     {
-        show_records(existing_record, cmd);
+        show_records(db_records, stdout);
     }
 
     if (clear_cmd)

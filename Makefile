@@ -1,8 +1,8 @@
 
 CC=gcc
 FLAGS=-Wall -Werror
-SRC_DIR=./db/src
-UTILS_DIR=./db/utils
+SRC_DIR=./lib/src
+UTILS_DIR=./lib/utils
 
 all: lamedb
 
