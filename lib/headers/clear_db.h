@@ -3,6 +3,8 @@
 
 #include "init_db.h"
 
+#define YES_LEN 3
+
 /**
  * Drops the txt file representing the db.
  * We overwrite the contents (if any) of the file,

@@ -1,7 +1,5 @@
 #include "../headers/clear_db.h"
 
-#define YES_LEN 3
-
 bool clear_db(void)
 {
     char *user_choice = (char *)malloc(YES_LEN);
