@@ -1,5 +1,5 @@
-#ifndef __delete_record__h
-#define __delete_record__h
+#ifndef __delete_record_h__
+#define __delete_record_h__
 
 #include "init_db.h"
 #include "put_record.h"
@@ -15,4 +15,4 @@
  * @param cmd Query: d(elete).
  */
 void delete_record(struct record *db_records, char *record_key, char cmd);
-#endif //__delete_record__h
+#endif //__delete_record_h__

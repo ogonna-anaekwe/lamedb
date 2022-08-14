@@ -14,4 +14,4 @@
  */
 struct record *insert_node(struct record *db_records, char *record_key, char *record_value, bool is_new);
 
-#endif // __insert_node_h__
+#endif //__insert_node_h__
