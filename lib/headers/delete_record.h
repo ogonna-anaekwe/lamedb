@@ -14,5 +14,5 @@
  * @param record_key Key identifying a record in the db.
  * @param cmd Query: d(elete).
  */
-void delete_record(struct record *db_records, char *record_key, char *cmd);
+void delete_record(struct record *db_records, char *record_key, char cmd);
 #endif //__delete_record__h

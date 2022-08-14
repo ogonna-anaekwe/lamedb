@@ -12,5 +12,5 @@
  * @param cmd Query: g(et).
  * @return bool - Does the record even exist?
  */
-bool get_record(struct record *db_records, char *record_key, char *cmd);
+bool get_record(struct record *db_records, char *record_key, char cmd);
 #endif //__get_record_h__

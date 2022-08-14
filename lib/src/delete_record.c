@@ -1,6 +1,6 @@
 #include "../headers/delete_record.h"
 
-void delete_record(struct record *db_records, char *record_key, char *cmd)
+void delete_record(struct record *db_records, char *record_key, char cmd)
 {
     bool record_exists = get_record(db_records, record_key, cmd) == 1,
          keys_match = 0;

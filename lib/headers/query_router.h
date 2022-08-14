@@ -16,6 +16,6 @@
  * @param record_value Value corresponding to key in the db.
  * @param cmd Query: g(et), p(ut), d(elete), a(ll), s(how).
  */
-void query_router(struct record *db_records, char *record_key, char *record_value, char *cmd);
+void query_router(struct record *db_records, char *record_key, char *record_value, char cmd);
 
 #endif //__query_router_h__

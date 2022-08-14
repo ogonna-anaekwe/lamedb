@@ -1,35 +1,23 @@
 #include "../headers/query_router.h"
 
-void query_router(struct record *db_records, char *key, char *value, char *cmd)
+void query_router(struct record *db_records, char *key, char *value, char cmd)
 {
-    bool put_cmd = strncmp(cmd, "p", strlen(cmd)) == 0,
-         get_cmd = strncmp(cmd, "g", strlen(cmd)) == 0,
-         del_cmd = strncmp(cmd, "d", strlen(cmd)) == 0,
-         show_cmd = strncmp(cmd, "a", strlen(cmd)) == 0,
-         clear_cmd = strncmp(cmd, "c", strlen(cmd)) == 0;
-
-    if (get_cmd)
+    switch (cmd)
     {
-        get_record(db_records, key, cmd);
-    }
-
-    if (put_cmd)
-    {
+    case 'p':
         put_record(db_records, key, value, cmd);
-    }
-
-    if (del_cmd)
-    {
+        break;
+    case 'g':
+        get_record(db_records, key, cmd);
+        break;
+    case 'd':
         delete_record(db_records, key, cmd);
-    }
-
-    if (show_cmd)
-    {
+        break;
+    case 'a':
         show_records(db_records, stdout);
-    }
-
-    if (clear_cmd)
-    {
+        break;
+    case 'c':
         clear_db();
+        break;
     }
 }

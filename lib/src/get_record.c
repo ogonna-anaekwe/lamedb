@@ -1,13 +1,13 @@
 #include "../headers/get_record.h"
 
-bool get_record(struct record *db_records, char *record_key, char *cmd)
+bool get_record(struct record *db_records, char *record_key, char cmd)
 {
     long record_key_num = strtol(record_key, NULL, BASE);
     CHECK_KEY(record_key_num); /* This check is also applied in all queries that indirectly invoke the get query e.g. put */
 
     bool record_exists = 0,
-         get_cmd = strncmp(cmd, "g", strlen(cmd)) == 0,
-         del_cmd = strncmp(cmd, "d", strlen(cmd)) == 0;
+         get_cmd = cmd == 'g',
+         del_cmd = cmd == 'd';
 
     while (db_records)
     {

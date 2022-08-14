@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
         query_param_idx++;
     }
 
-    char *cmd = query_split[0],
-         *key = query_split[1],
+    char cmd = query_split[0][0], /* query_split[0] is a string. Taking the first idx gives the character corresponding to the cmd */
+        *key = query_split[1],
          *value = query_split[2];
 
     query_router(db_records, key, value, cmd);
