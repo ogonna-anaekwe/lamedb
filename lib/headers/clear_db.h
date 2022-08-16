@@ -3,7 +3,7 @@
 
 #include "init_db.h"
 
-#define YES_LEN 3
+#define YES_LEN 4 /* 4 (instead of 3) so that the last character is '\0' which will make for a valid string */
 
 /**
  * Drops the txt file representing the db.
