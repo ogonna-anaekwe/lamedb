@@ -19,5 +19,7 @@ void query_router(struct record *db_records, char *key, char *value, char cmd)
     case 'c':
         clear_db();
         break;
+    default:
+        printf("'%c' is an invalid command. Valid commands: p, g, d, a, c.\n", cmd);
     }
 }
