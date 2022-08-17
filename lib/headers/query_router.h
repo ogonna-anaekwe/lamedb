@@ -9,13 +9,9 @@
 #include "clear_db.h"
 
 /**
- * Intercepts a query (from the cli) and calls
- * the corresponding func
- * @param db_records Records in the db.
- * @param record_key Key identifying a record in the db.
- * @param record_value Value corresponding to key in the db.
- * @param cmd Query: g(et), p(ut), d(elete), a(ll), s(how).
+ * Loops through array, executing queries sequentially.
+ * @param queryv array of queries. This is just argv.
  */
-void query_router(struct record *db_records, char *record_key, char *record_value, char cmd);
+void query_router(char *queryv[]);
 
 #endif //__query_router_h__
