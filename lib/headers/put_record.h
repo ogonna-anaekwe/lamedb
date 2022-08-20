@@ -14,5 +14,5 @@
  * @param record_value Value corresponding to key in the db.
  * @param cmd Query: p(ut).
  */
-void put_record(struct record *db_records, char *record_key, char *record_value, char cmd);
+void put_record(struct record *db_records, long record_key, char *record_value, char cmd);
 #endif //__put_record__h

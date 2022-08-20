@@ -54,5 +54,5 @@ $ ./lamedb a
 **NOTE:** 
 1. Ideally, `<value>` should be a string. 
 2. To add a record: `./lamedb p,1,"first"`; to get that record: `./lamedb g,1`; to update that record: `./lamedb p,1,"one"`; to delete that record `./lamedb d,1`. 
-3. To do the above in one command: `./lamedb p,1,"first" g,1 p,1,"one" d,1`.
+3. To do the above in one command: `./lamedb p,1,"first" g,1 p,1,"one" d,1`. (Queries must be space separated.)
 

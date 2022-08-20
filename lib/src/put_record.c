@@ -1,6 +1,6 @@
 #include "../headers/put_record.h"
 
-void put_record(struct record *db_records, char *record_key, char *record_value, char cmd)
+void put_record(struct record *db_records, long record_key, char *record_value, char cmd)
 {
     bool create_new_record = get_record(db_records, record_key, cmd) == 0,
          keys_match = 0;
@@ -18,7 +18,7 @@ void put_record(struct record *db_records, char *record_key, char *record_value,
     {
         while (db_records)
         {
-            keys_match = (db_records->key == strtol(record_key, NULL, BASE));
+            keys_match = (db_records->key == record_key);
             keys_match ? fprintf(db, "%ld,%s\n", db_records->key, record_value) : fprintf(db, "%ld,%s", db_records->key, db_records->value);
             db_records = db_records->next_record;
         }

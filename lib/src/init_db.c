@@ -33,6 +33,8 @@ struct record *initialize_db(void)
          *record_value,
          *record_entry_split[FIELDS]; /* This will hold key and value from the db */
 
+    long key; /* Will hold the record_key as a long var */
+
     struct record *db_records = NULL; /* The db file will be read into this list */
 
     while (getline(&record_ptr, &record_len, db) != -1)
@@ -48,13 +50,14 @@ struct record *initialize_db(void)
         record_key = (char *)malloc(record_key_len);
         CHECK_MALLOC(record_key);
         strncpy(record_key, record_entry_split[0], record_key_len); /* Copy over key (from db) */
+        key = strtol(record_key, NULL, BASE);
 
         record_value_len = strlen(record_entry_split[1]);
         record_value = (char *)malloc(record_value_len);
         CHECK_MALLOC(record_value);
         strncpy(record_value, record_entry_split[1], record_value_len); /* Copy over value (from db) */
 
-        db_records = insert_node(db_records, record_key, record_value, 0);
+        db_records = insert_node(db_records, key, record_value, 0);
     }
     fclose(db);
 

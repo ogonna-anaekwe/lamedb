@@ -1,17 +1,14 @@
 #include "../headers/get_record.h"
 
-bool get_record(struct record *db_records, char *record_key, char cmd)
+bool get_record(struct record *db_records, long record_key, char cmd)
 {
-    long record_key_num = strtol(record_key, NULL, BASE);
-    CHECK_KEY(record_key_num); /* This check is also applied in all queries that indirectly invoke the get query e.g. put */
-
     bool record_exists = 0,
          get_cmd = cmd == 'g',
          del_cmd = cmd == 'd';
 
     while (db_records)
     {
-        record_exists = db_records->key == record_key_num;
+        record_exists = db_records->key == record_key;
         if (record_exists)
         {
             if (get_cmd)
@@ -26,7 +23,7 @@ bool get_record(struct record *db_records, char *record_key, char cmd)
 
     if (!record_exists && (get_cmd || del_cmd))
     {
-        printf("No record for key %ld in db.\n", record_key_num);
+        printf("No record for key %ld in db.\n", record_key);
     }
 
     return record_exists; /* Determines how to handle 'puts': update (if record exists) or create new record otherwise */

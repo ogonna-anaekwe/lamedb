@@ -20,8 +20,14 @@ void query_router(char *queryv[])
         }
 
         char cmd = query_split[0][0], /* query_split[0] is a string. Taking the first idx gives the character corresponding to the cmd */
-            *key = query_split[1],
-             *value = query_split[2];
+            *value = query_split[2];
+
+        long key = 0;
+        if (query_split[1])
+        {
+            key = strtol(query_split[1], NULL, BASE);
+            CHECK_KEY(key);
+        }
 
         switch (cmd)
         {
